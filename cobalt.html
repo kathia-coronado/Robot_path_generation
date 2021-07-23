@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module cobalt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>cobalt</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/tmorgan/git/kathia/robot_path_planning/cobalt.py">/Users/tmorgan/git/kathia/robot_path_planning/cobalt.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="abc.html">abc</a><br>
+</td><td width="25%" valign=top><a href="scipy.spatial.distance.html">scipy.spatial.distance</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="cobalt.html#Route">Route</a>
+</font></dt><dt><font face="helvetica, arial"><a href="cobalt.html#Solution">Solution</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="cobalt.html#SolutionA">SolutionA</a>
+</font></dt><dt><font face="helvetica, arial"><a href="cobalt.html#SolutionB">SolutionB</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Route">class <strong>Route</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Route">Route</a>(distance:&nbsp;float&nbsp;=&nbsp;0,&nbsp;waypoints:&nbsp;list&nbsp;=&nbsp;[])<br>
+&nbsp;<br>
+Simple&nbsp;route&nbsp;data&nbsp;structure&nbsp;with&nbsp;a&nbsp;distance&nbsp;value&nbsp;and&nbsp;list&nbsp;of&nbsp;waypoints.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;distance&nbsp;&nbsp;&nbsp;&nbsp;float=0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distance&nbsp;of&nbsp;this&nbsp;<a href="#Route">Route</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;waypoints&nbsp;&nbsp;&nbsp;list=[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;waypoints&nbsp;of&nbsp;this&nbsp;<a href="#Route">Route</a>.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Route-__init__"><strong>__init__</strong></a>(self, distance: float = 0, waypoints: list = [])</dt><dd><tt>Constructs&nbsp;a&nbsp;new&nbsp;<a href="#Route">Route</a>&nbsp;instance&nbsp;with&nbsp;an&nbsp;initial&nbsp;distance&nbsp;value&nbsp;and&nbsp;list&nbsp;<br>
+of&nbsp;waypoints<br>
+&nbsp;<br>
+:param&nbsp;distance:&nbsp;distance&nbsp;of&nbsp;this&nbsp;<a href="#Route">Route</a>.<br>
+:param&nbsp;waypoints:&nbsp;waypoints&nbsp;of&nbsp;this&nbsp;<a href="#Route">Route</a>.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Solution">class <strong>Solution</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Solution">Solution</a>(pts:&nbsp;list)<br>
+&nbsp;<br>
+Base&nbsp;abstract&nbsp;<a href="#Solution">Solution</a>&nbsp;class.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points&nbsp;of&nbsp;this&nbsp;<a href="#Solution">Solution</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;total_dst&nbsp;&nbsp;&nbsp;float=0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;distance&nbsp;of&nbsp;the&nbsp;waypoints&nbsp;of&nbsp;this&nbsp;solution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;waypoints&nbsp;&nbsp;&nbsp;list=[0]&nbsp;&nbsp;&nbsp;&nbsp;waypoints&nbsp;of&nbsp;this&nbsp;solution<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Solution-__init__"><strong>__init__</strong></a>(self, pts: list)</dt><dd><tt>Constructs&nbsp;a&nbsp;new&nbsp;<a href="#Solution">Solution</a>&nbsp;instance&nbsp;with&nbsp;an&nbsp;initial&nbsp;list&nbsp;of&nbsp;points.<br>
+&nbsp;<br>
+:param&nbsp;pts:&nbsp;the&nbsp;points&nbsp;list&nbsp;to&nbsp;use&nbsp;for&nbsp;this&nbsp;solution.</tt></dd></dl>
+
+<dl><dt><a name="Solution-find_and_append_next_route"><strong>find_and_append_next_route</strong></a>(self, max_charge: float)</dt><dd><tt>Convenience&nbsp;method&nbsp;for&nbsp;automatically&nbsp;appending&nbsp;the&nbsp;next&nbsp;route.<br>
+&nbsp;<br>
+:param&nbsp;max_charge:&nbsp;the&nbsp;max&nbsp;charge&nbsp;allowed&nbsp;for&nbsp;the&nbsp;robot&nbsp;measured&nbsp;in&nbsp;distance.</tt></dd></dl>
+
+<dl><dt><a name="Solution-find_next_route"><strong>find_next_route</strong></a>(self, max_charge: float)</dt><dd><tt>Finds&nbsp;the&nbsp;next&nbsp;valid&nbsp;route&nbsp;that&nbsp;starts&nbsp;and&nbsp;ends&nbsp;at&nbsp;home&nbsp;and&nbsp;returns&nbsp;the<br>
+distance&nbsp;traveled&nbsp;and&nbsp;waypoints&nbsp;of&nbsp;that&nbsp;route.<br>
+Extending&nbsp;classes&nbsp;MUST&nbsp;implement&nbsp;this&nbsp;abstract&nbsp;method&nbsp;and&nbsp;return&nbsp;a&nbsp;<a href="#Route">Route</a>&nbsp;<br>
+instance.<br>
+&nbsp;<br>
+:param&nbsp;max_charge:&nbsp;the&nbsp;max&nbsp;charge&nbsp;allowed&nbsp;for&nbsp;the&nbsp;robot&nbsp;measured&nbsp;in&nbsp;<br>
+distance.<br>
+:return:&nbsp;a&nbsp;<a href="#Route">Route</a>&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="Solution-generate_waypoints"><strong>generate_waypoints</strong></a>(self, max_charge: float, verbose: bool = False)</dt><dd><tt>Generates&nbsp;the&nbsp;full&nbsp;route&nbsp;of&nbsp;subroutes&nbsp;for&nbsp;the&nbsp;robot&nbsp;to&nbsp;traverse&nbsp;all&nbsp;waypoints<br>
+in&nbsp;'self.<strong>pts</strong>'.&nbsp;This&nbsp;extendeding&nbsp;class&nbsp;may&nbsp;override&nbsp;this&nbsp;method,&nbsp;but&nbsp;it&nbsp;will&nbsp;<br>
+sacrifice&nbsp;the&nbsp;standard&nbsp;output&nbsp;logic&nbsp;of&nbsp;this&nbsp;default&nbsp;implementation.<br>
+&nbsp;<br>
+:param&nbsp;max_charge:&nbsp;the&nbsp;max&nbsp;charge&nbsp;allowed&nbsp;for&nbsp;the&nbsp;robot&nbsp;measured&nbsp;in&nbsp;distance.<br>
+:param&nbsp;verbose:&nbsp;specify&nbsp;'True'&nbsp;to&nbsp;output&nbsp;verbose&nbsp;messages&nbsp;to&nbsp;stdout.&nbsp;Default<br>
+value&nbsp;is&nbsp;'False'.<br>
+:return:&nbsp;a&nbsp;list&nbsp;of&nbsp;waypoints&nbsp;indices&nbsp;pointing&nbsp;to&nbsp;elements&nbsp;in&nbsp;'self.<strong>pts</strong>'.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SolutionA">class <strong>SolutionA</strong></a>(<a href="cobalt.html#Solution">Solution</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#SolutionA">SolutionA</a>(pts:&nbsp;list)<br>
+&nbsp;<br>
+-&nbsp;Most&nbsp;efficient&nbsp;implementation&nbsp;in&nbsp;terms&nbsp;of&nbsp;developmental&nbsp;complexity.<br>
+-&nbsp;Computational&nbsp;complexity&nbsp;is&nbsp;exponential&nbsp;O(N&nbsp;*&nbsp;(N&nbsp;-&nbsp;c)),&nbsp;where&nbsp;c&nbsp;is&nbsp;the&nbsp;number<br>
+of&nbsp;points&nbsp;already&nbsp;visited<br>
+-&nbsp;Point&nbsp;traversal&nbsp;complexity&nbsp;is&nbsp;linear&nbsp;O(N&nbsp;+&nbsp;c),&nbsp;where&nbsp;c&nbsp;is&nbsp;number&nbsp;of&nbsp;times&nbsp;<br>
+returning&nbsp;home<br>
+-&nbsp;Scalability&nbsp;is&nbsp;not&nbsp;ideal&nbsp;for&nbsp;magnitudes&nbsp;where&nbsp;N&nbsp;&gt;&nbsp;1,000,000&nbsp;-&nbsp;a&nbsp;multiprocessing&nbsp;<br>
+approach&nbsp;would&nbsp;improve&nbsp;computational&nbsp;performance&nbsp;by&nbsp;a&nbsp;linear&nbsp;factor,&nbsp;<br>
+O((N&nbsp;*&nbsp;N&nbsp;-&nbsp;c)&nbsp;/&nbsp;t),&nbsp;where&nbsp;c&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;points&nbsp;already&nbsp;visited,&nbsp;and&nbsp;t&nbsp;is<br>
+the&nbsp;number&nbsp;of&nbsp;threads&nbsp;used&nbsp;for&nbsp;multiprocessing.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="cobalt.html#SolutionA">SolutionA</a></dd>
+<dd><a href="cobalt.html#Solution">Solution</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SolutionA-find_next_loc_from"><strong>find_next_loc_from</strong></a>(self, loc, max_charge: float, dst_traveled: float = 0, waypoints=[])</dt><dd><tt>Finds&nbsp;the&nbsp;next&nbsp;location&nbsp;from&nbsp;a&nbsp;starting&nbsp;location&nbsp;and&nbsp;appends&nbsp;the&nbsp;new&nbsp;location,<br>
+if&nbsp;it&nbsp;is&nbsp;traversable,&nbsp;to&nbsp;passed&nbsp;in&nbsp;existing&nbsp;distance&nbsp;traveled&nbsp;as&nbsp;well&nbsp;as&nbsp;waypoints.<br>
+&nbsp;<br>
+:param&nbsp;max_charge:&nbsp;the&nbsp;max&nbsp;charge&nbsp;allowed&nbsp;for&nbsp;the&nbsp;robot&nbsp;measured&nbsp;in&nbsp;distance.<br>
+:param&nbsp;dst_traveled:&nbsp;the&nbsp;distance&nbsp;already&nbsp;traveled&nbsp;thus&nbsp;far.<br>
+:param&nbsp;waypoints:&nbsp;the&nbsp;waypoints&nbsp;already&nbsp;traveled.<br>
+:return:&nbsp;a&nbsp;4-d&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;new&nbsp;location&nbsp;traveled&nbsp;to,&nbsp;the&nbsp;location&nbsp;index&nbsp;in<br>
+pts,&nbsp;the&nbsp;new&nbsp;total&nbsp;distance&nbsp;traveled&nbsp;thus&nbsp;far,&nbsp;the&nbsp;llist&nbsp;of&nbsp;waypoints&nbsp;traveled.</tt></dd></dl>
+
+<dl><dt><a name="SolutionA-find_next_route"><strong>find_next_route</strong></a>(self, max_charge: float)</dt><dd><tt>Finds&nbsp;the&nbsp;next&nbsp;valid&nbsp;route&nbsp;that&nbsp;starts&nbsp;and&nbsp;ends&nbsp;at&nbsp;home&nbsp;and&nbsp;returns&nbsp;the<br>
+distance&nbsp;traveled&nbsp;and&nbsp;waypoints&nbsp;of&nbsp;that&nbsp;route.<br>
+Extending&nbsp;classes&nbsp;MUST&nbsp;implement&nbsp;this&nbsp;abstract&nbsp;method&nbsp;and&nbsp;return&nbsp;a&nbsp;<a href="#Route">Route</a>&nbsp;<br>
+instance.<br>
+&nbsp;<br>
+:param&nbsp;max_charge:&nbsp;the&nbsp;max&nbsp;charge&nbsp;allowed&nbsp;for&nbsp;the&nbsp;robot&nbsp;measured&nbsp;in&nbsp;<br>
+distance.<br>
+:return:&nbsp;a&nbsp;<a href="#Route">Route</a>&nbsp;instance.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="cobalt.html#Solution">Solution</a>:<br>
+<dl><dt><a name="SolutionA-__init__"><strong>__init__</strong></a>(self, pts: list)</dt><dd><tt>Constructs&nbsp;a&nbsp;new&nbsp;<a href="#Solution">Solution</a>&nbsp;instance&nbsp;with&nbsp;an&nbsp;initial&nbsp;list&nbsp;of&nbsp;points.<br>
+&nbsp;<br>
+:param&nbsp;pts:&nbsp;the&nbsp;points&nbsp;list&nbsp;to&nbsp;use&nbsp;for&nbsp;this&nbsp;solution.</tt></dd></dl>
+
+<dl><dt><a name="SolutionA-find_and_append_next_route"><strong>find_and_append_next_route</strong></a>(self, max_charge: float)</dt><dd><tt>Convenience&nbsp;method&nbsp;for&nbsp;automatically&nbsp;appending&nbsp;the&nbsp;next&nbsp;route.<br>
+&nbsp;<br>
+:param&nbsp;max_charge:&nbsp;the&nbsp;max&nbsp;charge&nbsp;allowed&nbsp;for&nbsp;the&nbsp;robot&nbsp;measured&nbsp;in&nbsp;distance.</tt></dd></dl>
+
+<dl><dt><a name="SolutionA-generate_waypoints"><strong>generate_waypoints</strong></a>(self, max_charge: float, verbose: bool = False)</dt><dd><tt>Generates&nbsp;the&nbsp;full&nbsp;route&nbsp;of&nbsp;subroutes&nbsp;for&nbsp;the&nbsp;robot&nbsp;to&nbsp;traverse&nbsp;all&nbsp;waypoints<br>
+in&nbsp;'self.<strong>pts</strong>'.&nbsp;This&nbsp;extendeding&nbsp;class&nbsp;may&nbsp;override&nbsp;this&nbsp;method,&nbsp;but&nbsp;it&nbsp;will&nbsp;<br>
+sacrifice&nbsp;the&nbsp;standard&nbsp;output&nbsp;logic&nbsp;of&nbsp;this&nbsp;default&nbsp;implementation.<br>
+&nbsp;<br>
+:param&nbsp;max_charge:&nbsp;the&nbsp;max&nbsp;charge&nbsp;allowed&nbsp;for&nbsp;the&nbsp;robot&nbsp;measured&nbsp;in&nbsp;distance.<br>
+:param&nbsp;verbose:&nbsp;specify&nbsp;'True'&nbsp;to&nbsp;output&nbsp;verbose&nbsp;messages&nbsp;to&nbsp;stdout.&nbsp;Default<br>
+value&nbsp;is&nbsp;'False'.<br>
+:return:&nbsp;a&nbsp;list&nbsp;of&nbsp;waypoints&nbsp;indices&nbsp;pointing&nbsp;to&nbsp;elements&nbsp;in&nbsp;'self.<strong>pts</strong>'.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="cobalt.html#Solution">Solution</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SolutionB">class <strong>SolutionB</strong></a>(<a href="cobalt.html#Solution">Solution</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#SolutionB">SolutionB</a>(pts:&nbsp;list)<br>
+&nbsp;<br>
+Template&nbsp;<a href="#Solution">Solution</a>&nbsp;B&nbsp;for&nbsp;POC&nbsp;example&nbsp;should&nbsp;another&nbsp;route&nbsp;<br>
+selection&nbsp;process&nbsp;be&nbsp;considered.&nbsp;See&nbsp;SolutionB_try.py&nbsp;which&nbsp;<br>
+should&nbsp;it's&nbsp;business&nbsp;logic&nbsp;be&nbsp;a&nbsp;good&nbsp;candidate&nbsp;for<br>
+another&nbsp;edge&nbsp;case,&nbsp;it&nbsp;could&nbsp;eventually&nbsp;be&nbsp;implemented<br>
+here.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="cobalt.html#SolutionB">SolutionB</a></dd>
+<dd><a href="cobalt.html#Solution">Solution</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SolutionB-find_next_route"><strong>find_next_route</strong></a>(self, max_charge: float)</dt><dd><tt>Finds&nbsp;the&nbsp;next&nbsp;valid&nbsp;route&nbsp;that&nbsp;starts&nbsp;and&nbsp;ends&nbsp;at&nbsp;home&nbsp;and&nbsp;returns&nbsp;the<br>
+distance&nbsp;traveled&nbsp;and&nbsp;waypoints&nbsp;of&nbsp;that&nbsp;route.<br>
+Extending&nbsp;classes&nbsp;MUST&nbsp;implement&nbsp;this&nbsp;abstract&nbsp;method&nbsp;and&nbsp;return&nbsp;a&nbsp;<a href="#Route">Route</a>&nbsp;<br>
+instance.<br>
+&nbsp;<br>
+:param&nbsp;max_charge:&nbsp;the&nbsp;max&nbsp;charge&nbsp;allowed&nbsp;for&nbsp;the&nbsp;robot&nbsp;measured&nbsp;in&nbsp;<br>
+distance.<br>
+:return:&nbsp;a&nbsp;<a href="#Route">Route</a>&nbsp;instance.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="cobalt.html#Solution">Solution</a>:<br>
+<dl><dt><a name="SolutionB-__init__"><strong>__init__</strong></a>(self, pts: list)</dt><dd><tt>Constructs&nbsp;a&nbsp;new&nbsp;<a href="#Solution">Solution</a>&nbsp;instance&nbsp;with&nbsp;an&nbsp;initial&nbsp;list&nbsp;of&nbsp;points.<br>
+&nbsp;<br>
+:param&nbsp;pts:&nbsp;the&nbsp;points&nbsp;list&nbsp;to&nbsp;use&nbsp;for&nbsp;this&nbsp;solution.</tt></dd></dl>
+
+<dl><dt><a name="SolutionB-find_and_append_next_route"><strong>find_and_append_next_route</strong></a>(self, max_charge: float)</dt><dd><tt>Convenience&nbsp;method&nbsp;for&nbsp;automatically&nbsp;appending&nbsp;the&nbsp;next&nbsp;route.<br>
+&nbsp;<br>
+:param&nbsp;max_charge:&nbsp;the&nbsp;max&nbsp;charge&nbsp;allowed&nbsp;for&nbsp;the&nbsp;robot&nbsp;measured&nbsp;in&nbsp;distance.</tt></dd></dl>
+
+<dl><dt><a name="SolutionB-generate_waypoints"><strong>generate_waypoints</strong></a>(self, max_charge: float, verbose: bool = False)</dt><dd><tt>Generates&nbsp;the&nbsp;full&nbsp;route&nbsp;of&nbsp;subroutes&nbsp;for&nbsp;the&nbsp;robot&nbsp;to&nbsp;traverse&nbsp;all&nbsp;waypoints<br>
+in&nbsp;'self.<strong>pts</strong>'.&nbsp;This&nbsp;extendeding&nbsp;class&nbsp;may&nbsp;override&nbsp;this&nbsp;method,&nbsp;but&nbsp;it&nbsp;will&nbsp;<br>
+sacrifice&nbsp;the&nbsp;standard&nbsp;output&nbsp;logic&nbsp;of&nbsp;this&nbsp;default&nbsp;implementation.<br>
+&nbsp;<br>
+:param&nbsp;max_charge:&nbsp;the&nbsp;max&nbsp;charge&nbsp;allowed&nbsp;for&nbsp;the&nbsp;robot&nbsp;measured&nbsp;in&nbsp;distance.<br>
+:param&nbsp;verbose:&nbsp;specify&nbsp;'True'&nbsp;to&nbsp;output&nbsp;verbose&nbsp;messages&nbsp;to&nbsp;stdout.&nbsp;Default<br>
+value&nbsp;is&nbsp;'False'.<br>
+:return:&nbsp;a&nbsp;list&nbsp;of&nbsp;waypoints&nbsp;indices&nbsp;pointing&nbsp;to&nbsp;elements&nbsp;in&nbsp;'self.<strong>pts</strong>'.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="cobalt.html#Solution">Solution</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-check_order"><strong>check_order</strong></a>(pts, max_charge: float, order)</dt><dd><tt>Check&nbsp;whether&nbsp;a&nbsp;given&nbsp;order&nbsp;of&nbsp;points&nbsp;is&nbsp;valid,&nbsp;and&nbsp;prints&nbsp;the&nbsp;total&nbsp;<br>
+length.&nbsp;You&nbsp;start&nbsp;and&nbsp;stop&nbsp;at&nbsp;the&nbsp;charging&nbsp;station.<br>
+pts:&nbsp;np&nbsp;array&nbsp;of&nbsp;points&nbsp;to&nbsp;visit,&nbsp;prepended&nbsp;by&nbsp;the&nbsp;location&nbsp;of&nbsp;home<br>
+order:&nbsp;array&nbsp;of&nbsp;pt&nbsp;indicies&nbsp;to&nbsp;visit,&nbsp;where&nbsp;0&nbsp;is&nbsp;home<br>
+i.e.&nbsp;order&nbsp;=&nbsp;[0,&nbsp;1,&nbsp;0,&nbsp;2,&nbsp;0,&nbsp;3,&nbsp;0]</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><tt>Handles&nbsp;CLI&nbsp;passed&nbsp;arguments&nbsp;to&nbsp;allow&nbsp;for&nbsp;flexible&nbsp;testing&nbsp;with&nbsp;variable&nbsp;<br>
+parameter&nbsp;including&nbsp;and&nbsp;N&nbsp;parameter&nbsp;specfifying&nbsp;the&nbsp;scale&nbsp;size<br>
+of&nbsp;the&nbsp;problem.</tt></dd></dl>
+ <dl><dt><a name="-pfchk"><strong>pfchk</strong></a>(func, *args, **kwargs)</dt><dd><tt>Runs&nbsp;a&nbsp;performance&nbsp;check&nbsp;on&nbsp;the&nbsp;specified&nbsp;routine</tt></dd></dl>
+ <dl><dt><a name="-visualize_pts"><strong>visualize_pts</strong></a>(pts: list)</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>home</strong> = array([0.5, 0.5])</td></tr></table>
+</body></html>
